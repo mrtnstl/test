@@ -3,9 +3,20 @@
   "version": "1.0.0",
   "description": "basic db management webapp",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
 }
