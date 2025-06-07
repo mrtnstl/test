@@ -13,7 +13,58 @@
 
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <h2>Our Top Rated Bistros</h2>
+                <form action="">
+                    <label for=""></label>
+                    <input type="text" class="">
+                    <button class="btn btn-info">SEARCH</button>
+                </form>
+                <div id="bistros-wrapper">
+
+                </div>
+            </div>
+        </div>
     </div>
     <script src="/bundle.js"></script>
+    <script type="module">
+        "use strict"
+        async function getBistros(){
+        
+            try{
+                const response = await fetch("/bistros")
+                if(!response.ok){
+                    throw new Error(`Response status: ${response.status}`)
+                }
+
+                const jsonResponse = await response.json()
+                //console.log(jsonResponse)
+                return(jsonResponse)
+
+            }catch(error){
+                return(error.message)
+            }
+        }
+        getBistros().then(result => {
+            //console.log(result)
+            let almostRaw = "<div>" 
+            result.map(item => {
+                almostRaw += `<p>ID ${item.id} NAME ${item.name} LOCATION ${item.city}</p>`
+                //console.log(`ID ${item.id} NAME ${item.name} LOCATION ${item.city}`)
+                //console.log(``)
+               
+            })
+            almostRaw += "</div>"
+            document.getElementById("bistros-wrapper").innerHTML = almostRaw
+        })
+        /*let renderBistros = (data) = {
+            //const parent = document.getElementById("bistros-wrapper")
+            //let bistroCard = document.createElement("div")
+            for (let key in data) {
+                console.log("BISTRO " + data[key] + " END")
+            }
+        }*/
+    </script>
 </body>
 </html>

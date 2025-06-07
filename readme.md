@@ -8,7 +8,8 @@
 #### NodeJs + Express
 
 - GET       /           landing page(hero, top rated bistros?, footer)
-- GET       /bistros    show all bistros(paginated?, search by name?, filtering?)
+- GET       /data       bistros page(paginated?, search by name?, filtering?)
+- GET       /bistros    get all bistros
 - POST      /bistros    post new bistro
 - DELETE    /bistros    delete bistro by id
 - PUT       /bistros    update bistro data by id
