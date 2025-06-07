@@ -1,2 +1,2 @@
 # title
-szöveg...
+Ujjgyakorlat mert nem megy a git... :(
