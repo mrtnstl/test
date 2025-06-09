@@ -17,9 +17,9 @@
             <div class="col">
                 <h2>Our Top Rated Bistros</h2>
                 <form action="">
-                    <label for=""></label>
-                    <input type="text" class="">
-                    <button class="btn btn-info">SEARCH</button>
+                    <label for="search"></label>
+                    <input type="text" name="search" id="search" class="">
+                    <button class="btn btn-primary">SEARCH</button>
                 </form>
                 <div id="bistros-wrapper">
 
@@ -31,40 +31,40 @@
     <script type="module">
         "use strict"
         async function getBistros(){
-        
             try{
-                const response = await fetch("/bistros")
+                const response = await fetch("/bistros");
                 if(!response.ok){
-                    throw new Error(`Response status: ${response.status}`)
+                    throw new Error(`Response status: ${response.status}`);
                 }
-
-                const jsonResponse = await response.json()
+                const jsonResponse = await response.json();
                 //console.log(jsonResponse)
-                return(jsonResponse)
-
+                return(jsonResponse);
             }catch(error){
-                return(error.message)
+                return(error.message);
             }
         }
         getBistros().then(result => {
             //console.log(result)
-            let almostRaw = "<div>" 
+            let almostRaw = "";
             result.map(item => {
-                almostRaw += `<p>ID ${item.id} NAME ${item.name} LOCATION ${item.city}</p>`
-                //console.log(`ID ${item.id} NAME ${item.name} LOCATION ${item.city}`)
-                //console.log(``)
-               
+                almostRaw += `<div class="bistro-card">
+                    <h3>${item.name}</h3>
+                    <small>${item.city}</small>
+                    <p>ID ${item.id}</p>
+                    <button class="btn btn-sm btn-success">DETAILS</button>
+                    <button class="btn btn-sm btn-warning">EDIT</button>
+                    <button class="btn btn-sm btn-danger">DELETE</button>
+                    </div>`;
             })
-            almostRaw += "</div>"
-            document.getElementById("bistros-wrapper").innerHTML = almostRaw
+            document.getElementById("bistros-wrapper").innerHTML = almostRaw;
         })
-        /*let renderBistros = (data) = {
-            //const parent = document.getElementById("bistros-wrapper")
-            //let bistroCard = document.createElement("div")
-            for (let key in data) {
-                console.log("BISTRO " + data[key] + " END")
-            }
-        }*/
+        
+        async function getSingleBistro(){}
+        async function getSingleContact(){}
+        async function deleteBistro(){}
+        async function createBistro(){}
+        async function updateBistro(){}
+
     </script>
 </body>
 </html>

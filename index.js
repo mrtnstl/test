@@ -109,19 +109,23 @@ app.get("/", (req,res)=> {
 app.get("/data", (req, res) =>{
     res.sendFile(path.join(__dirname, "dist", "/bistros.html"))
 })
+
 app.get("/bistros", (req, res) =>{
     res.json(bistros)
+})
+app.get("/bistroById/{id}", (req, res) => {
+
 })
 app.post("/bistros", (req, res) => {
 
 })
-app.delete("/bistros", (req, res) => {
+app.delete("/bistros/{id}", (req, res) => {
 
 })
-app.put("/bistros", (req, res) => {
+app.put("/bistros/{id}", (req, res) => {
 
 })
-app.get("/contacts", (req, res) =>{
+app.get("/contact/{id}", (req, res) =>{
     res.json(contacts)
 })
 

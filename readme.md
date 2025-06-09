@@ -7,12 +7,14 @@
 
 #### NodeJs + Express
 
-- GET       /           landing page(hero, top rated bistros?, footer)
-- GET       /data       bistros page(paginated?, search by name?, filtering?)
-- GET       /bistros    get all bistros
-- POST      /bistros    post new bistro
-- DELETE    /bistros    delete bistro by id
-- PUT       /bistros    update bistro data by id
+- GET       /                   landing page(hero, top rated bistros?, footer)
+- GET       /data               bistros page(paginated?, search by name?, filtering?)
+- GET       /bistros            get all bistros
+- GET       /bistroById/{id}    get single bistro by id
+- GET       /contact/{id}       get contact by is
+- POST      /bistros            post new bistro
+- DELETE    /bistros/{id}       delete bistro by id
+- PUT       /bistros/{id}       update bistro data by id
 
 #### SQLite
 
