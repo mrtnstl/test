@@ -47,24 +47,57 @@
             //console.log(result)
             let almostRaw = "";
             result.map(item => {
-                almostRaw += `<div class="bistro-card">
+                almostRaw += `
+                <div class="bistro-card">
                     <h3>${item.name}</h3>
                     <small>${item.city}</small>
                     <p>ID ${item.id}</p>
-                    <button class="btn btn-sm btn-success">DETAILS</button>
-                    <button class="btn btn-sm btn-warning">EDIT</button>
-                    <button class="btn btn-sm btn-danger">DELETE</button>
-                    </div>`;
+                    <button class="btn btn-sm btn-success" id="${item.id}" onclick="">DETAILS</button>
+                    <button class="btn btn-sm btn-warning" onclick="">EDIT</button>
+                    <button class="btn btn-sm btn-danger" onclick="">DELETE</button>
+                </div>`;
             })
             document.getElementById("bistros-wrapper").innerHTML = almostRaw;
         })
         
-        async function getSingleBistro(){}
-        async function getSingleContact(){}
-        async function deleteBistro(){}
-        async function createBistro(){}
-        async function updateBistro(){}
+        async function getSingleBistro(){
+            //fetch :id return json
 
+        }
+        async function getSingleContact(){
+            //fetch :id return json
+        }
+        async function deleteBistro(){
+            //delete :id return OK||ERROR
+        }
+        async function createBistro(){
+            //post {data}
+        }
+        async function updateBistro(){
+            //getSingleBistro json
+            //update :id return OK||ERROR
+        }
+
+        function renderPopup(renderLoc, method, formTitle){
+            let renderLocation = document.getElementById(renderLoc)
+            let almostRaw = 
+            `<div class="crud-form">
+                <h4>${formTitle}</h4>
+                <form>
+                    
+                    <p></p>
+                    
+                    <button class="btn btn-sm btn-success">SEND</button>
+                    <button class="btn btn-sm btn-danger" href="/data">CANCEL</button>
+                </form>
+            </div>`;
+            
+            document.getElementById("bistros-wrapper").innerHTML = almostRaw;
+            console.alert(elementsArray)
+            //call CRUD (createBistro || updateBistro)
+                // if ERROR display ERROR
+                // if OK delete rendered element
+        }
     </script>
 </body>
 </html>

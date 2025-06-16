@@ -1,0 +1,23 @@
+<%- include("./partials/header") %>
+                <h1>Bistros Page</h1>
+                <h2>Count: </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2><%= typeof bistro === "undefined" ? "Create" : "Edit" %> Bistro <%= typeof bistro === "undefined" ? " " : bistro.name %></h2>
+                <form method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="<%= typeof bistro === "undefined" ? " " : bistro.name %>">
+
+                    <label for="city">Location</label>
+                    <input type="text" id="city" name="city" value="<%= typeof bistro === "undefined" ? " " : bistro.city %>">
+
+                    <input type="submit" class="btn btn-primary" value="SAVE">
+                    <a class="btn btn-warning" href="/">CANCEL</a>
+                </form>
+                
+               
+            </div>
+        </div>
+<%- include("./partials/footer") %>

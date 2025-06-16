@@ -1,0 +1,28 @@
+<%- include("./partials/header") %>
+                <h1>Bistros Page</h1>
+                <h2>Count: <%= bistros.length %></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Our Top Rated Bistros</h2>
+                <form action="">
+                    <label for="search"></label>
+                    <input type="text" name="search" id="search" class="">
+                    <button class="btn btn-primary">SEARCH</button>
+                </form>
+                <a href="/createbistro" class="btn btn-primary">New Bistro</a>
+                <div id="bistros-wrapper">
+                    <% bistros.forEach(element => { %>
+                        <div class="bistro-card">
+                        <h3><%= element.name %></h3>
+                        <small><%= element.city %></small>
+                        <p>ID <%= element.id %></p>
+                        <a class="btn btn-sm btn-success" id="<%= element.id %>" href="">DETAILS</a>
+                        <a class="btn btn-sm btn-warning" href="/editbistro/<%= element.id %>">EDIT</a>
+                        <a class="btn btn-sm btn-danger" href="/deletebistro/<%= element.id %>">DELETE</a>
+                    <% }); %>
+                   
+                </div>
+                </div>
+<%- include("./partials/footer") %>
